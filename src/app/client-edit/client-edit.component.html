@@ -1,0 +1,62 @@
+<div class="container">
+    <h1>Editar Cliente</h1>
+    
+    <a href="#" routerLink="/" class="btn btn-primary">Regresar</a>
+           
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+   
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input
+                formControlName="nombre"
+                id="nombre"
+                type="text"
+                [(ngModel)]="client.nombre"
+                class="form-control">
+            <div *ngIf="f['nombre'].touched && f['nombre'].invalid" class="alert alert-danger">
+                <div *ngIf="f['nombre'].errors && f['nombre'].errors['required']">El nombre es obligatorio.</div>
+            </div>
+        </div>
+   
+        <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input
+                formControlName="apellidos"
+                id="apellidos"
+                type="text"
+                [(ngModel)]="client.apellidos"
+                class="form-control">
+            
+            <div *ngIf="f['apellidos'].touched && f['apellidos'].invalid" class="alert alert-danger">
+                <div *ngIf="f['apellidos'].errors && f['apellidos'].errors['required']">La descripcion es obligatoria.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Direccion:</label>
+            <input
+                formControlName="direccion"
+                id="direccion"
+                type="text"
+                [(ngModel)]="client.direccion"
+                class="form-control">
+            <div *ngIf="f['direccion'].touched && f['direccion'].invalid" class="alert alert-danger">
+                <div *ngIf="f['direccion'].errors && f['direccion'].errors['required']">El codigo es obligatorio.</div>
+            </div>
+        </div>
+   
+        <div class="form-group">
+            <label for="tel">Tel:</label>
+            <input
+                formControlName="tel"
+                id="tel"
+                type="number"
+                [(ngModel)]="client.tel"
+                class="form-control">            
+            <div *ngIf="f['tel'].touched && f['tel'].invalid" class="alert alert-danger">
+                <div *ngIf="f['tel'].errors && f['tel'].errors['required']">El precio es obligatorio.</div>
+            </div>
+        </div>
+   
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
+    </form>
+</div>

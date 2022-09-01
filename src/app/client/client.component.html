@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Clientes</h1>
+   
+    <a href="#" routerLink="/client-create" class="btn btn-primary">Agregar Cliente</a>
+     
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Direccion</th>
+        <th>telefono</th>
+        <th >Opciones</th>
+      </tr>
+      <tr *ngFor="let client of clients">
+        <td>{{ client.id }}</td>
+        <td>{{ client.nombre }}</td>
+        <td>{{ client.apellidos }}</td>
+        <td>{{ client.direccion }}</td>
+        <td>{{ client.tel }}</td>
+        <button type="button" (click)="viewProduct(client.id)" class="btn btn-primary btn-sm col-xs-2 margin-left">Ver</button>
+        <button type="button" (click)="editProduct(client.id)" class="btn btn-primary btn-sm col-xs-2 margin-left">Editar</button> 
+        <button type="button" (click)="deleteProduct(client.id)" class="btn btn-primary btn-sm col-xs-2 margin-left">Borrar</button>
+      </tr>
+    </table>
+ </div>
