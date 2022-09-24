@@ -45,7 +45,7 @@ export class ClientEditComponent implements OnInit {
     }
     let client: Client = this.form.value;
     this.clientService.update(this.client_id, client).subscribe((res:any) => {         
-         this.router.navigateByUrl('/');
+         this.router.navigateByUrl('/cient');
     })
   }
 }

@@ -37,7 +37,7 @@ export class ClientCreateComponent implements OnInit {
     }
     let client: Client = this.form.value;
     this.clientService.create(client).subscribe((res:any) => {
-         this.router.navigateByUrl('/');
+         this.router.navigateByUrl('/client');
     })
   }
 }

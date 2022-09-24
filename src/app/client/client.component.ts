@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Client } from '../models/client.model';
 import { ClientsService } from 'src/app/services/clients.service';
+import { TokenStorageService } from '../services/token-storage.service';
 
 
 @Component({
@@ -14,13 +15,15 @@ export class ClientComponent implements OnInit {
   clients: Client[] = [];
   constructor(
     public postService: ClientsService,
-    private router: Router
+    private router: Router,
+    public tokenSertice: TokenStorageService
     ) { }
 
   ngOnInit(): void {
     this.postService.getAll().subscribe((data: Client[])=>{
       this.clients = data;
-    })  
+    })      
+    
   }
 
   viewProduct(id:number){
