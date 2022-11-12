@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Calcular Volumen</h1>
+            
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+   
+        <div class="form-group">
+            <label for="radio">radio:</label>
+            <input
+                formControlName="radio"
+                id="radio"
+                type="text"
+                class="form-control">
+            <div *ngIf="f['radio'].touched && f['radio'].invalid" class="alert alert-danger">
+                <div *ngIf="f['radio'].errors && f['radio'].errors['required']">ETodos los campos son obligatorios.</div>
+            </div>
+        </div>
+   
+        <div class="form-group">
+            <label for="altura">altura:</label>
+            <input
+                formControlName="altura"
+                id="altura"
+                type="text"
+                class="form-control">
+            <div *ngIf="f['altura'].touched && f['altura'].invalid" class="alert alert-danger">
+                <div *ngIf="f['altura'].errors && f['altura'].errors['required']">Todos los campos son obligatorios.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="apellidos">volumen:</label>
+            <p>{{volumen}}</p>
+        </div>
+   
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
+    </form>
+</div>

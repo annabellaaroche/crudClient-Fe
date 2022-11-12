@@ -54,6 +54,13 @@ export class ClientsService {
     )
   }
      
+  //Cilindro
+  cilindro(cilindro:any): Observable<any> {
+    return this.httpClient.post<any>(this.apiURL + '/cilindro', JSON.stringify(cilindro), this.httpOptions)
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }  
    
   errorHandler(error: any) {
     let errorMessage = '';

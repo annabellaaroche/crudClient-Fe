@@ -52,6 +52,6 @@ export class LoginComponent implements OnInit {
     });
   }
   reloadPage(): void {
-    window.location.replace("/client")
+    window.location.replace("/cilindro")
   }
 }

@@ -12,6 +12,7 @@ import { ClientEditComponent } from './client-edit/client-edit.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor, httpInterceptorProviders } from './helpers/auth.interceptor';
+import { CilindroComponent } from './cilindro/cilindro.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AuthInterceptor, httpInterceptorProviders } from './helpers/auth.interc
     ClientViewComponent,
     ClientEditComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    CilindroComponent
   ],
   imports: [
     BrowserModule,
